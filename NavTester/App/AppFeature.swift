@@ -55,12 +55,12 @@ struct AppFeature: ReducerProtocol
         Reduce { state, action in
             switch action
             {
-                case .selector:
-                    state.route = .selector
+                case .selector(.showSecond):
+                    state.route = .second
                     return .none
                     
-                case .second:
-                    state.route = .second
+                case .second(.showSelector):
+                    state.route = .selector
                     return .none
                     
                 case .binding:
